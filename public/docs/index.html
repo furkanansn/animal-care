@@ -1,0 +1,1381 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>BiPati Api Documentation</title>
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../docs/css/theme-default.style.css" media="screen">
+    <link rel="stylesheet" href="../docs/css/theme-default.print.css" media="print">
+    <script src="../docs/js/theme-default-3.7.0.js"></script>
+
+    <link rel="stylesheet"
+          href="//unpkg.com/@highlightjs/cdn-assets@10.7.2/styles/obsidian.min.css">
+    <script src="//unpkg.com/@highlightjs/cdn-assets@10.7.2/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <script src="//cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+    <script>
+        var baseUrl = "http://172.20.10.2:8000";
+    </script>
+    <script src="../docs/js/tryitout-3.7.0.js"></script>
+
+</head>
+
+<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;]">
+<a href="#" id="nav-button">
+      <span>
+        MENU
+        <img src="../docs/images/navbar.png" alt="navbar-image" />
+      </span>
+</a>
+<div class="tocify-wrapper">
+                <div class="lang-selector">
+                            <a href="#" data-language-name="bash">bash</a>
+                            <a href="#" data-language-name="javascript">javascript</a>
+                    </div>
+        <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+    <ul class="search-results"></ul>
+
+    <ul id="toc">
+    </ul>
+
+            <ul class="toc-footer" id="toc-footer">
+                            <li><a href="../docs/collection.json">View Postman collection</a></li>
+                            <li><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
+                            <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+                    </ul>
+            <ul class="toc-footer" id="last-updated">
+            <li>Last updated: July 31 2021</li>
+        </ul>
+</div>
+<div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+        <h1>Introduction</h1>
+<p>This documentation aims to provide all the information you need to work with our API.</p>
+<aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
+You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
+<blockquote>
+<p>Base URL</p>
+</blockquote>
+<pre><code class="language-yaml">http://172.20.10.2:8000</code></pre>
+
+        <h1>Authenticating requests</h1>
+<p>This API is not authenticated.</p>
+
+        <h1 id="endpoints">Endpoints</h1>
+
+    
+
+            <h2 id="endpoints-POSTapi-v1-auth-register">Kullanıcı kayıt işlemleri.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-auth-register">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://172.20.10.2:8000/api/v1/auth/register" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"email\": \"jewel36@example.com\",
+    \"phone_number\": \"iure\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://172.20.10.2:8000/api/v1/auth/register"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "jewel36@example.com",
+    "phone_number": "iure"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-v1-auth-register">
+</span>
+<span id="execution-results-POSTapi-v1-auth-register" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-auth-register"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-auth-register"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-auth-register" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-auth-register"></code></pre>
+</span>
+<form id="form-POSTapi-v1-auth-register" data-method="POST"
+      data-path="api/v1/auth/register"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-auth-register', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-auth-register"
+                    onclick="tryItOut('POSTapi-v1-auth-register');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-auth-register"
+                    onclick="cancelTryOut('POSTapi-v1-auth-register');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-auth-register" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/auth/register</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="email"
+               data-endpoint="POSTapi-v1-auth-register"
+               data-component="body" required  hidden>
+    <br>
+<p>Must be a valid email address.</p>        </p>
+                <p>
+            <b><code>phone_number</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="phone_number"
+               data-endpoint="POSTapi-v1-auth-register"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+    
+    </form>
+
+            <h2 id="endpoints-POSTapi-v1-auth-login">Kullanıcı kayıt işlemleri</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-auth-login">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://172.20.10.2:8000/api/v1/auth/login" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://172.20.10.2:8000/api/v1/auth/login"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-v1-auth-login">
+</span>
+<span id="execution-results-POSTapi-v1-auth-login" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-auth-login"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-auth-login"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-auth-login" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-auth-login"></code></pre>
+</span>
+<form id="form-POSTapi-v1-auth-login" data-method="POST"
+      data-path="api/v1/auth/login"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-auth-login', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-auth-login"
+                    onclick="tryItOut('POSTapi-v1-auth-login');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-auth-login"
+                    onclick="cancelTryOut('POSTapi-v1-auth-login');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-auth-login" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/auth/login</code></b>
+        </p>
+                    </form>
+
+            <h2 id="endpoints-DELETEapi-v1-auth-logout">Logout operation.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-v1-auth-logout">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request DELETE \
+    "http://172.20.10.2:8000/api/v1/auth/logout" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://172.20.10.2:8000/api/v1/auth/logout"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-DELETEapi-v1-auth-logout">
+</span>
+<span id="execution-results-DELETEapi-v1-auth-logout" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-v1-auth-logout"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-v1-auth-logout"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-v1-auth-logout" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-v1-auth-logout"></code></pre>
+</span>
+<form id="form-DELETEapi-v1-auth-logout" data-method="DELETE"
+      data-path="api/v1/auth/logout"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-auth-logout', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-v1-auth-logout"
+                    onclick="tryItOut('DELETEapi-v1-auth-logout');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-v1-auth-logout"
+                    onclick="cancelTryOut('DELETEapi-v1-auth-logout');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-v1-auth-logout" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/v1/auth/logout</code></b>
+        </p>
+                    </form>
+
+            <h2 id="endpoints-GETapi-v1-animal">Tüm veriler için, dinamik sorgu.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-animal">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://172.20.10.2:8000/api/v1/animal" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://172.20.10.2:8000/api/v1/animal"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-v1-animal">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 55
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;error&quot;: false,
+    &quot;errorMsg&quot;: null,
+    &quot;data&quot;: {
+        &quot;data&quot;: [],
+        &quot;count&quot;: 0
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-animal" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-animal"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-animal"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-animal" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-animal"></code></pre>
+</span>
+<form id="form-GETapi-v1-animal" data-method="GET"
+      data-path="api/v1/animal"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-animal', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-animal"
+                    onclick="tryItOut('GETapi-v1-animal');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-animal"
+                    onclick="cancelTryOut('GETapi-v1-animal');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-animal" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/animal</code></b>
+        </p>
+                    </form>
+
+            <h2 id="endpoints-POSTapi-v1-animal-create">POST api/v1/animal/create</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-animal-create">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://172.20.10.2:8000/api/v1/animal/create" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://172.20.10.2:8000/api/v1/animal/create"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-v1-animal-create">
+</span>
+<span id="execution-results-POSTapi-v1-animal-create" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-animal-create"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-animal-create"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-animal-create" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-animal-create"></code></pre>
+</span>
+<form id="form-POSTapi-v1-animal-create" data-method="POST"
+      data-path="api/v1/animal/create"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-animal-create', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-animal-create"
+                    onclick="tryItOut('POSTapi-v1-animal-create');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-animal-create"
+                    onclick="cancelTryOut('POSTapi-v1-animal-create');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-animal-create" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/animal/create</code></b>
+        </p>
+                    </form>
+
+            <h2 id="endpoints-POSTapi-v1-auth-approve">Kullanıcı onaylama şeyi.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-auth-approve">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://172.20.10.2:8000/api/v1/auth/approve" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://172.20.10.2:8000/api/v1/auth/approve"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-v1-auth-approve">
+</span>
+<span id="execution-results-POSTapi-v1-auth-approve" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-auth-approve"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-auth-approve"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-auth-approve" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-auth-approve"></code></pre>
+</span>
+<form id="form-POSTapi-v1-auth-approve" data-method="POST"
+      data-path="api/v1/auth/approve"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-auth-approve', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-auth-approve"
+                    onclick="tryItOut('POSTapi-v1-auth-approve');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-auth-approve"
+                    onclick="cancelTryOut('POSTapi-v1-auth-approve');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-auth-approve" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/auth/approve</code></b>
+        </p>
+                    </form>
+
+            <h2 id="endpoints-GETapi-v1-cities">Tüm şehirleri döner.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-cities">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://172.20.10.2:8000/api/v1/cities" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://172.20.10.2:8000/api/v1/cities"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-v1-cities">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 54
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;error&quot;: false,
+    &quot;errorMsg&quot;: null,
+    &quot;data&quot;: {
+        &quot;data&quot;: [
+            {
+                &quot;sehir_id&quot;: 1,
+                &quot;sehir_title&quot;: &quot;İSTANBUL&quot;,
+                &quot;sehir_key&quot;: 34
+            },
+            {
+                &quot;sehir_id&quot;: 2,
+                &quot;sehir_title&quot;: &quot;ANKARA&quot;,
+                &quot;sehir_key&quot;: 6
+            },
+            {
+                &quot;sehir_id&quot;: 3,
+                &quot;sehir_title&quot;: &quot;İZMİR&quot;,
+                &quot;sehir_key&quot;: 35
+            },
+            {
+                &quot;sehir_id&quot;: 4,
+                &quot;sehir_title&quot;: &quot;BURSA&quot;,
+                &quot;sehir_key&quot;: 16
+            },
+            {
+                &quot;sehir_id&quot;: 5,
+                &quot;sehir_title&quot;: &quot;ADANA&quot;,
+                &quot;sehir_key&quot;: 1
+            },
+            {
+                &quot;sehir_id&quot;: 6,
+                &quot;sehir_title&quot;: &quot;ADIYAMAN&quot;,
+                &quot;sehir_key&quot;: 2
+            },
+            {
+                &quot;sehir_id&quot;: 7,
+                &quot;sehir_title&quot;: &quot;AFYONKARAHİSAR&quot;,
+                &quot;sehir_key&quot;: 3
+            },
+            {
+                &quot;sehir_id&quot;: 8,
+                &quot;sehir_title&quot;: &quot;AĞRI&quot;,
+                &quot;sehir_key&quot;: 4
+            },
+            {
+                &quot;sehir_id&quot;: 9,
+                &quot;sehir_title&quot;: &quot;AKSARAY&quot;,
+                &quot;sehir_key&quot;: 68
+            },
+            {
+                &quot;sehir_id&quot;: 10,
+                &quot;sehir_title&quot;: &quot;AMASYA&quot;,
+                &quot;sehir_key&quot;: 5
+            },
+            {
+                &quot;sehir_id&quot;: 11,
+                &quot;sehir_title&quot;: &quot;ANTALYA&quot;,
+                &quot;sehir_key&quot;: 7
+            },
+            {
+                &quot;sehir_id&quot;: 12,
+                &quot;sehir_title&quot;: &quot;ARDAHAN&quot;,
+                &quot;sehir_key&quot;: 75
+            },
+            {
+                &quot;sehir_id&quot;: 13,
+                &quot;sehir_title&quot;: &quot;ARTVİN&quot;,
+                &quot;sehir_key&quot;: 8
+            },
+            {
+                &quot;sehir_id&quot;: 14,
+                &quot;sehir_title&quot;: &quot;AYDIN&quot;,
+                &quot;sehir_key&quot;: 9
+            },
+            {
+                &quot;sehir_id&quot;: 15,
+                &quot;sehir_title&quot;: &quot;BALIKESİR&quot;,
+                &quot;sehir_key&quot;: 10
+            },
+            {
+                &quot;sehir_id&quot;: 16,
+                &quot;sehir_title&quot;: &quot;BARTIN&quot;,
+                &quot;sehir_key&quot;: 74
+            },
+            {
+                &quot;sehir_id&quot;: 17,
+                &quot;sehir_title&quot;: &quot;BATMAN&quot;,
+                &quot;sehir_key&quot;: 72
+            },
+            {
+                &quot;sehir_id&quot;: 18,
+                &quot;sehir_title&quot;: &quot;BAYBURT&quot;,
+                &quot;sehir_key&quot;: 69
+            },
+            {
+                &quot;sehir_id&quot;: 19,
+                &quot;sehir_title&quot;: &quot;BİLECİK&quot;,
+                &quot;sehir_key&quot;: 11
+            },
+            {
+                &quot;sehir_id&quot;: 20,
+                &quot;sehir_title&quot;: &quot;BİNG&Ouml;L&quot;,
+                &quot;sehir_key&quot;: 12
+            },
+            {
+                &quot;sehir_id&quot;: 21,
+                &quot;sehir_title&quot;: &quot;BİTLİS&quot;,
+                &quot;sehir_key&quot;: 13
+            },
+            {
+                &quot;sehir_id&quot;: 22,
+                &quot;sehir_title&quot;: &quot;BOLU&quot;,
+                &quot;sehir_key&quot;: 14
+            },
+            {
+                &quot;sehir_id&quot;: 23,
+                &quot;sehir_title&quot;: &quot;BURDUR&quot;,
+                &quot;sehir_key&quot;: 15
+            },
+            {
+                &quot;sehir_id&quot;: 24,
+                &quot;sehir_title&quot;: &quot;&Ccedil;ANAKKALE&quot;,
+                &quot;sehir_key&quot;: 17
+            },
+            {
+                &quot;sehir_id&quot;: 25,
+                &quot;sehir_title&quot;: &quot;&Ccedil;ANKIRI&quot;,
+                &quot;sehir_key&quot;: 18
+            },
+            {
+                &quot;sehir_id&quot;: 26,
+                &quot;sehir_title&quot;: &quot;&Ccedil;ORUM&quot;,
+                &quot;sehir_key&quot;: 19
+            },
+            {
+                &quot;sehir_id&quot;: 27,
+                &quot;sehir_title&quot;: &quot;DENİZLİ&quot;,
+                &quot;sehir_key&quot;: 20
+            },
+            {
+                &quot;sehir_id&quot;: 28,
+                &quot;sehir_title&quot;: &quot;DİYARBAKIR&quot;,
+                &quot;sehir_key&quot;: 21
+            },
+            {
+                &quot;sehir_id&quot;: 29,
+                &quot;sehir_title&quot;: &quot;KOCAELİ&quot;,
+                &quot;sehir_key&quot;: 41
+            },
+            {
+                &quot;sehir_id&quot;: 30,
+                &quot;sehir_title&quot;: &quot;KONYA&quot;,
+                &quot;sehir_key&quot;: 42
+            },
+            {
+                &quot;sehir_id&quot;: 31,
+                &quot;sehir_title&quot;: &quot;K&Uuml;TAHYA&quot;,
+                &quot;sehir_key&quot;: 43
+            },
+            {
+                &quot;sehir_id&quot;: 32,
+                &quot;sehir_title&quot;: &quot;MALATYA&quot;,
+                &quot;sehir_key&quot;: 44
+            },
+            {
+                &quot;sehir_id&quot;: 33,
+                &quot;sehir_title&quot;: &quot;MANİSA&quot;,
+                &quot;sehir_key&quot;: 45
+            },
+            {
+                &quot;sehir_id&quot;: 34,
+                &quot;sehir_title&quot;: &quot;MARDİN&quot;,
+                &quot;sehir_key&quot;: 47
+            },
+            {
+                &quot;sehir_id&quot;: 35,
+                &quot;sehir_title&quot;: &quot;MERSİN&quot;,
+                &quot;sehir_key&quot;: 33
+            },
+            {
+                &quot;sehir_id&quot;: 36,
+                &quot;sehir_title&quot;: &quot;MUĞLA&quot;,
+                &quot;sehir_key&quot;: 48
+            },
+            {
+                &quot;sehir_id&quot;: 37,
+                &quot;sehir_title&quot;: &quot;MUŞ&quot;,
+                &quot;sehir_key&quot;: 49
+            },
+            {
+                &quot;sehir_id&quot;: 38,
+                &quot;sehir_title&quot;: &quot;NEVŞEHİR&quot;,
+                &quot;sehir_key&quot;: 50
+            },
+            {
+                &quot;sehir_id&quot;: 39,
+                &quot;sehir_title&quot;: &quot;NİĞDE&quot;,
+                &quot;sehir_key&quot;: 51
+            },
+            {
+                &quot;sehir_id&quot;: 40,
+                &quot;sehir_title&quot;: &quot;ORDU&quot;,
+                &quot;sehir_key&quot;: 52
+            },
+            {
+                &quot;sehir_id&quot;: 41,
+                &quot;sehir_title&quot;: &quot;OSMANİYE&quot;,
+                &quot;sehir_key&quot;: 80
+            },
+            {
+                &quot;sehir_id&quot;: 42,
+                &quot;sehir_title&quot;: &quot;RİZE&quot;,
+                &quot;sehir_key&quot;: 53
+            },
+            {
+                &quot;sehir_id&quot;: 43,
+                &quot;sehir_title&quot;: &quot;SAKARYA&quot;,
+                &quot;sehir_key&quot;: 54
+            },
+            {
+                &quot;sehir_id&quot;: 44,
+                &quot;sehir_title&quot;: &quot;SAMSUN&quot;,
+                &quot;sehir_key&quot;: 55
+            },
+            {
+                &quot;sehir_id&quot;: 45,
+                &quot;sehir_title&quot;: &quot;SİİRT&quot;,
+                &quot;sehir_key&quot;: 56
+            },
+            {
+                &quot;sehir_id&quot;: 46,
+                &quot;sehir_title&quot;: &quot;SİNOP&quot;,
+                &quot;sehir_key&quot;: 57
+            },
+            {
+                &quot;sehir_id&quot;: 47,
+                &quot;sehir_title&quot;: &quot;ŞIRNAK&quot;,
+                &quot;sehir_key&quot;: 73
+            },
+            {
+                &quot;sehir_id&quot;: 48,
+                &quot;sehir_title&quot;: &quot;SİVAS&quot;,
+                &quot;sehir_key&quot;: 58
+            },
+            {
+                &quot;sehir_id&quot;: 49,
+                &quot;sehir_title&quot;: &quot;TEKİRDAĞ&quot;,
+                &quot;sehir_key&quot;: 59
+            },
+            {
+                &quot;sehir_id&quot;: 50,
+                &quot;sehir_title&quot;: &quot;TOKAT&quot;,
+                &quot;sehir_key&quot;: 60
+            },
+            {
+                &quot;sehir_id&quot;: 51,
+                &quot;sehir_title&quot;: &quot;TRABZON&quot;,
+                &quot;sehir_key&quot;: 61
+            },
+            {
+                &quot;sehir_id&quot;: 52,
+                &quot;sehir_title&quot;: &quot;TUNCELİ&quot;,
+                &quot;sehir_key&quot;: 62
+            },
+            {
+                &quot;sehir_id&quot;: 53,
+                &quot;sehir_title&quot;: &quot;ŞANLIURFA&quot;,
+                &quot;sehir_key&quot;: 63
+            },
+            {
+                &quot;sehir_id&quot;: 54,
+                &quot;sehir_title&quot;: &quot;UŞAK&quot;,
+                &quot;sehir_key&quot;: 64
+            },
+            {
+                &quot;sehir_id&quot;: 55,
+                &quot;sehir_title&quot;: &quot;VAN&quot;,
+                &quot;sehir_key&quot;: 65
+            },
+            {
+                &quot;sehir_id&quot;: 56,
+                &quot;sehir_title&quot;: &quot;YALOVA&quot;,
+                &quot;sehir_key&quot;: 77
+            },
+            {
+                &quot;sehir_id&quot;: 57,
+                &quot;sehir_title&quot;: &quot;YOZGAT&quot;,
+                &quot;sehir_key&quot;: 66
+            },
+            {
+                &quot;sehir_id&quot;: 58,
+                &quot;sehir_title&quot;: &quot;ZONGULDAK&quot;,
+                &quot;sehir_key&quot;: 67
+            },
+            {
+                &quot;sehir_id&quot;: 59,
+                &quot;sehir_title&quot;: &quot;D&Uuml;ZCE&quot;,
+                &quot;sehir_key&quot;: 81
+            },
+            {
+                &quot;sehir_id&quot;: 60,
+                &quot;sehir_title&quot;: &quot;EDİRNE&quot;,
+                &quot;sehir_key&quot;: 22
+            },
+            {
+                &quot;sehir_id&quot;: 61,
+                &quot;sehir_title&quot;: &quot;ELAZIĞ&quot;,
+                &quot;sehir_key&quot;: 23
+            },
+            {
+                &quot;sehir_id&quot;: 62,
+                &quot;sehir_title&quot;: &quot;ERZİNCAN&quot;,
+                &quot;sehir_key&quot;: 24
+            },
+            {
+                &quot;sehir_id&quot;: 63,
+                &quot;sehir_title&quot;: &quot;ERZURUM&quot;,
+                &quot;sehir_key&quot;: 25
+            },
+            {
+                &quot;sehir_id&quot;: 64,
+                &quot;sehir_title&quot;: &quot;ESKİŞEHİR&quot;,
+                &quot;sehir_key&quot;: 26
+            },
+            {
+                &quot;sehir_id&quot;: 65,
+                &quot;sehir_title&quot;: &quot;GAZİANTEP&quot;,
+                &quot;sehir_key&quot;: 27
+            },
+            {
+                &quot;sehir_id&quot;: 66,
+                &quot;sehir_title&quot;: &quot;GİRESUN&quot;,
+                &quot;sehir_key&quot;: 28
+            },
+            {
+                &quot;sehir_id&quot;: 67,
+                &quot;sehir_title&quot;: &quot;G&Uuml;M&Uuml;ŞHANE&quot;,
+                &quot;sehir_key&quot;: 29
+            },
+            {
+                &quot;sehir_id&quot;: 68,
+                &quot;sehir_title&quot;: &quot;HAKKARİ&quot;,
+                &quot;sehir_key&quot;: 30
+            },
+            {
+                &quot;sehir_id&quot;: 69,
+                &quot;sehir_title&quot;: &quot;HATAY&quot;,
+                &quot;sehir_key&quot;: 31
+            },
+            {
+                &quot;sehir_id&quot;: 70,
+                &quot;sehir_title&quot;: &quot;IĞDIR&quot;,
+                &quot;sehir_key&quot;: 76
+            },
+            {
+                &quot;sehir_id&quot;: 71,
+                &quot;sehir_title&quot;: &quot;ISPARTA&quot;,
+                &quot;sehir_key&quot;: 32
+            },
+            {
+                &quot;sehir_id&quot;: 72,
+                &quot;sehir_title&quot;: &quot;KAHRAMANMARAŞ&quot;,
+                &quot;sehir_key&quot;: 46
+            },
+            {
+                &quot;sehir_id&quot;: 73,
+                &quot;sehir_title&quot;: &quot;KARAB&Uuml;K&quot;,
+                &quot;sehir_key&quot;: 78
+            },
+            {
+                &quot;sehir_id&quot;: 74,
+                &quot;sehir_title&quot;: &quot;KARAMAN&quot;,
+                &quot;sehir_key&quot;: 70
+            },
+            {
+                &quot;sehir_id&quot;: 75,
+                &quot;sehir_title&quot;: &quot;KARS&quot;,
+                &quot;sehir_key&quot;: 36
+            },
+            {
+                &quot;sehir_id&quot;: 76,
+                &quot;sehir_title&quot;: &quot;KASTAMONU&quot;,
+                &quot;sehir_key&quot;: 37
+            },
+            {
+                &quot;sehir_id&quot;: 77,
+                &quot;sehir_title&quot;: &quot;KAYSERİ&quot;,
+                &quot;sehir_key&quot;: 38
+            },
+            {
+                &quot;sehir_id&quot;: 78,
+                &quot;sehir_title&quot;: &quot;KİLİS&quot;,
+                &quot;sehir_key&quot;: 79
+            },
+            {
+                &quot;sehir_id&quot;: 79,
+                &quot;sehir_title&quot;: &quot;KIRIKKALE&quot;,
+                &quot;sehir_key&quot;: 71
+            },
+            {
+                &quot;sehir_id&quot;: 80,
+                &quot;sehir_title&quot;: &quot;KIRKLARELİ&quot;,
+                &quot;sehir_key&quot;: 39
+            },
+            {
+                &quot;sehir_id&quot;: 81,
+                &quot;sehir_title&quot;: &quot;KIRŞEHİR&quot;,
+                &quot;sehir_key&quot;: 40
+            }
+        ],
+        &quot;ilceRoute&quot;: &quot;http:\/\/172.20.10.2:8000\/api\/v1\/cities\/ilce&quot;
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-cities" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-cities"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-cities"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-cities" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-cities"></code></pre>
+</span>
+<form id="form-GETapi-v1-cities" data-method="GET"
+      data-path="api/v1/cities"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-cities', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-cities"
+                    onclick="tryItOut('GETapi-v1-cities');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-cities"
+                    onclick="cancelTryOut('GETapi-v1-cities');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-cities" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/cities</code></b>
+        </p>
+                    </form>
+
+            <h2 id="endpoints-GETapi-v1-cities-ilce--id-">Belirtilen ilçeyi döner.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-cities-ilce--id-">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://172.20.10.2:8000/api/v1/cities/ilce/17" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://172.20.10.2:8000/api/v1/cities/ilce/17"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-v1-cities-ilce--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 53
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;error&quot;: false,
+    &quot;errorMsg&quot;: null,
+    &quot;data&quot;: {
+        &quot;data&quot;: [
+            {
+                &quot;ilce_id&quot;: 302,
+                &quot;ilce_title&quot;: &quot;AYVACIK&quot;,
+                &quot;ilce_key&quot;: 1160,
+                &quot;ilce_sehirkey&quot;: 17
+            },
+            {
+                &quot;ilce_id&quot;: 303,
+                &quot;ilce_title&quot;: &quot;BAYRAMİ&Ccedil;&quot;,
+                &quot;ilce_key&quot;: 1180,
+                &quot;ilce_sehirkey&quot;: 17
+            },
+            {
+                &quot;ilce_id&quot;: 304,
+                &quot;ilce_title&quot;: &quot;BİGA&quot;,
+                &quot;ilce_key&quot;: 1190,
+                &quot;ilce_sehirkey&quot;: 17
+            },
+            {
+                &quot;ilce_id&quot;: 305,
+                &quot;ilce_title&quot;: &quot;BOZCAADA&quot;,
+                &quot;ilce_key&quot;: 1205,
+                &quot;ilce_sehirkey&quot;: 17
+            },
+            {
+                &quot;ilce_id&quot;: 306,
+                &quot;ilce_title&quot;: &quot;&Ccedil;AN&quot;,
+                &quot;ilce_key&quot;: 1229,
+                &quot;ilce_sehirkey&quot;: 17
+            },
+            {
+                &quot;ilce_id&quot;: 307,
+                &quot;ilce_title&quot;: &quot;ECEABAT&quot;,
+                &quot;ilce_key&quot;: 1293,
+                &quot;ilce_sehirkey&quot;: 17
+            },
+            {
+                &quot;ilce_id&quot;: 308,
+                &quot;ilce_title&quot;: &quot;EZİNE&quot;,
+                &quot;ilce_key&quot;: 1326,
+                &quot;ilce_sehirkey&quot;: 17
+            },
+            {
+                &quot;ilce_id&quot;: 309,
+                &quot;ilce_title&quot;: &quot;GELİBOLU&quot;,
+                &quot;ilce_key&quot;: 1340,
+                &quot;ilce_sehirkey&quot;: 17
+            },
+            {
+                &quot;ilce_id&quot;: 310,
+                &quot;ilce_title&quot;: &quot;G&Ouml;K&Ccedil;EADA&quot;,
+                &quot;ilce_key&quot;: 1408,
+                &quot;ilce_sehirkey&quot;: 17
+            },
+            {
+                &quot;ilce_id&quot;: 311,
+                &quot;ilce_title&quot;: &quot;LAPSEKİ&quot;,
+                &quot;ilce_key&quot;: 1503,
+                &quot;ilce_sehirkey&quot;: 17
+            },
+            {
+                &quot;ilce_id&quot;: 312,
+                &quot;ilce_title&quot;: &quot;MERKEZ&quot;,
+                &quot;ilce_key&quot;: 1230,
+                &quot;ilce_sehirkey&quot;: 17
+            },
+            {
+                &quot;ilce_id&quot;: 313,
+                &quot;ilce_title&quot;: &quot;YENİCE&quot;,
+                &quot;ilce_key&quot;: 1722,
+                &quot;ilce_sehirkey&quot;: 17
+            }
+        ],
+        &quot;mahalleRoute&quot;: &quot;http:\/\/172.20.10.2:8000\/api\/v1\/cities\/mahalle&quot;
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-cities-ilce--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-cities-ilce--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-cities-ilce--id-"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-cities-ilce--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-cities-ilce--id-"></code></pre>
+</span>
+<form id="form-GETapi-v1-cities-ilce--id-" data-method="GET"
+      data-path="api/v1/cities/ilce/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-cities-ilce--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-cities-ilce--id-"
+                    onclick="tryItOut('GETapi-v1-cities-ilce--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-cities-ilce--id-"
+                    onclick="cancelTryOut('GETapi-v1-cities-ilce--id-');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-cities-ilce--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/cities/ilce/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="GETapi-v1-cities-ilce--id-"
+               data-component="url" required  hidden>
+    <br>
+<p>The ID of the ilce.</p>            </p>
+                    </form>
+
+            <h2 id="endpoints-GETapi-v1-cities-mahalle--id-">Belirtilen mahalleyi döner.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-cities-mahalle--id-">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://172.20.10.2:8000/api/v1/cities/mahalle/4" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://172.20.10.2:8000/api/v1/cities/mahalle/4"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-v1-cities-mahalle--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 52
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;error&quot;: false,
+    &quot;errorMsg&quot;: null,
+    &quot;data&quot;: {
+        &quot;data&quot;: []
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-cities-mahalle--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-cities-mahalle--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-cities-mahalle--id-"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-cities-mahalle--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-cities-mahalle--id-"></code></pre>
+</span>
+<form id="form-GETapi-v1-cities-mahalle--id-" data-method="GET"
+      data-path="api/v1/cities/mahalle/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-cities-mahalle--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-cities-mahalle--id-"
+                    onclick="tryItOut('GETapi-v1-cities-mahalle--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-cities-mahalle--id-"
+                    onclick="cancelTryOut('GETapi-v1-cities-mahalle--id-');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-cities-mahalle--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/cities/mahalle/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="GETapi-v1-cities-mahalle--id-"
+               data-component="url" required  hidden>
+    <br>
+<p>The ID of the mahalle.</p>            </p>
+                    </form>
+
+    
+
+        
+    </div>
+    <div class="dark-box">
+                    <div class="lang-selector">
+                                    <a href="#" data-language-name="bash">bash</a>
+                                    <a href="#" data-language-name="javascript">javascript</a>
+                            </div>
+            </div>
+</div>
+<script>
+    $(function () {
+        var exampleLanguages = ["bash","javascript"];
+        setupLanguages(exampleLanguages);
+    });
+</script>
+</body>
+</html>
